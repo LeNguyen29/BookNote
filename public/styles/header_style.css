@@ -1,0 +1,31 @@
+.site_name a {
+    color: white;
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25pt;
+}
+
+.navbar {
+    background-color: #131314;
+}
+
+.navbar .nav a {
+    font-size: 20pt;
+    font-family: "Iceland";
+}
+
+#btn_login {
+    font-weight: bold;
+    font-size: 15pt;
+    font-family: "Iceland";
+}
+
+.page_title {
+    font-size: 40pt;
+    margin: 0;
+}
+
+body {
+    font-family: "Iceland";
+}

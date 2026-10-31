@@ -1,0 +1,9 @@
+footer {
+    background-color: #131314;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14pt;
+}
