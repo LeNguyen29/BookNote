@@ -1,5 +1,15 @@
 .card {
-    max-width: 17rem;
+    max-width: 18rem;
+}
+
+.card-group {
+    padding: 0;
+}
+
+.card .img_cover {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .card .card-title {
@@ -12,4 +22,8 @@
     display: inline;
     padding: 4px 8px;
     border-radius: 5px;
+}
+
+.rating .gold_star {
+    color: gold;
 }

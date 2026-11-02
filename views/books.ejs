@@ -1,0 +1,96 @@
+<%- include("partials/header") %>
+    <title>Books - Tato's Review</title>
+    <link rel="stylesheet" href="styles/index_style.css">
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+
+    <main>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-8">
+                    <h1 class="page_title">
+                        BOOKS
+                    </h1>
+                </div>
+
+                <div class="col-4 d-flex align-items-center">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Search for items..." aria-label="Search" aria-describedby="button-search">
+                        <button id="button-search" type="button" class="btn-solid theme-primary me-2">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row d-flex align-items-center justify-content-center my-2">
+                <!-- CARDS -->
+                <% if(locals.books) {%>
+                <div class="card-group row row-cols-5 gap-3 align-items-center justify-content-center">
+                    <% for (let i = 0; i < books.length; i++) {%>
+                    <div class="card p-3">
+                        <img class="card-img-top rounded-3 img_cover" 
+                            src=<%= books[i].cover_url %> 
+                            alt="Insert cover here">
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= books[i].name %>
+                            </h5>
+
+                            <p class="card-text">
+                                <%= books[i].abstract %>
+                            </p>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex">
+                                <div class="col-4">
+                                    Author:
+                                </div>
+
+                                <div class="col-8 d-flex justify-content-end">
+                                    <%= books[i].author %>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item d-flex">
+                                <div class="col-4">
+                                    My Rating:
+                                </div>
+
+                                <div class="col-8 d-flex justify-content-end">
+                                    <div class="rating">
+                                        <% for (let j = 0; j < books[i].rating; j++) { %>
+                                            <i class="fa-solid fa-star gold_star"></i>
+                                        <% } %>
+                                        <% for (let j = 0; j < 5 - books[i].rating; j++) { %>
+                                            <i class="fa-solid fa-star"></i>
+                                        <% } %>   
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <a href="/" type="button" class="btn-solid theme-primary me-2">
+                                    Read My Review
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>
